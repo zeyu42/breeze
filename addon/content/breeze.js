@@ -477,6 +477,13 @@ Zotero.Breeze = {
                 return;
             }
 
+            // Remove old cache entries for this same feed before saving new one
+            for (let key of Object.keys(this.filterCache)) {
+                if (key.startsWith(cacheKeyBase + '_')) {
+                    delete this.filterCache[key];
+                }
+            }
+
             // Cache results
             this.filterCache[cacheKey] = {
                 relevant: relevantIds,
