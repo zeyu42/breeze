@@ -1,0 +1,94 @@
+<vbox onload="BreezePreferences.init()">
+	<linkset>
+		<html:link rel="localization" href="breeze.ftl" />
+	</linkset>
+
+	<groupbox>
+		<label>
+			<html:h2 data-l10n-id="breeze-prefs-api-section"></html:h2>
+		</label>
+
+		<hbox align="center">
+			<label data-l10n-id="breeze-prefs-api-url" control="breeze-pref-api-url" />
+			<html:input id="breeze-pref-api-url" type="text" preference="extensions.breeze.apiUrl"
+				style="flex: 1; margin-left: 8px;" data-search-strings-raw="OpenAI,API,URL,endpoint,ollama" />
+		</hbox>
+
+		<hbox align="center" style="margin-top: 8px;">
+			<label data-l10n-id="breeze-prefs-api-key" control="breeze-pref-api-key" />
+			<html:input id="breeze-pref-api-key" type="password" preference="extensions.breeze.apiKey"
+				style="flex: 1; margin-left: 8px;" data-search-strings-raw="API key,secret,token" />
+		</hbox>
+
+		<hbox align="center" style="margin-top: 8px;">
+			<label data-l10n-id="breeze-prefs-model" control="breeze-pref-model" />
+			<html:input id="breeze-pref-model" type="text" preference="extensions.breeze.model"
+				style="flex: 1; margin-left: 8px;" data-search-strings-raw="model,gpt,claude" />
+		</hbox>
+	</groupbox>
+
+	<groupbox>
+		<label>
+			<html:h2 data-l10n-id="breeze-prefs-interest-section"></html:h2>
+		</label>
+
+		<hbox align="center">
+			<label value="Title Sampling Rate (%)" control="breeze-pref-title-sample-rate" />
+			<html:input id="breeze-pref-title-sample-rate" type="number" preference="extensions.breeze.titleSampleRate"
+				min="1" max="100" step="5" style="width: 70px; margin-left: 8px;" />
+		</hbox>
+
+		<hbox align="center" style="margin-top: 8px;">
+			<label value="Abstract Sampling Rate (% of sampled titles)" control="breeze-pref-sample-rate" />
+			<html:input id="breeze-pref-sample-rate" type="number" preference="extensions.breeze.abstractSampleRate"
+				min="1" max="100" step="5" style="width: 70px; margin-left: 8px;" />
+		</hbox>
+
+		<hbox align="center" style="margin-top: 8px;">
+			<label data-l10n-id="breeze-prefs-schedule" control="breeze-pref-schedule" />
+			<menulist id="breeze-pref-schedule" preference="extensions.breeze.schedule" sizetopopup="always"
+				style="margin-left: 8px;">
+				<menupopup>
+					<menuitem value="once" label="Once (manual)" />
+					<menuitem value="monthly" label="Monthly (automatic)" />
+				</menupopup>
+			</menulist>
+		</hbox>
+
+		<hbox style="margin-top: 12px;">
+			<button id="breeze-btn-summarize-now" data-l10n-id="breeze-prefs-summarize-now"
+				oncommand="BreezePreferences.summarizeNow()" />
+		</hbox>
+
+		<vbox style="margin-top: 12px;">
+			<label data-l10n-id="breeze-prefs-interest-summary" />
+			<html:textarea id="breeze-interest-summary" readonly="true" rows="10"
+				style="width: 100%; font-family: system-ui; font-size: 13px; resize: vertical;" />
+		</vbox>
+
+		<hbox align="center" style="margin-top: 4px;">
+			<label data-l10n-id="breeze-prefs-last-updated" />
+			<label id="breeze-last-updated" value="" style="margin-left: 4px;" />
+		</hbox>
+	</groupbox>
+
+	<groupbox>
+		<label>
+			<html:h2>Status Log</html:h2>
+		</label>
+		<hbox style="margin-bottom: 6px;">
+			<button id="breeze-btn-refresh-log" label="Refresh Log" oncommand="BreezePreferences.refreshLog()" />
+			<button id="breeze-btn-clear-log" label="Clear Log" oncommand="BreezePreferences.clearLog()" />
+		</hbox>
+		<html:textarea id="breeze-status-log" readonly="true" rows="12"
+			style="width: 100%; font-family: monospace; font-size: 12px; resize: vertical; white-space: pre;" />
+	</groupbox>
+
+	<groupbox>
+		<label>
+			<html:h2 data-l10n-id="breeze-prefs-about-section"></html:h2>
+		</label>
+		<description data-l10n-id="breeze-prefs-about-description" />
+		<label id="breeze-about-version" value="" />
+	</groupbox>
+</vbox>

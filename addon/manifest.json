@@ -1,0 +1,19 @@
+{
+	"manifest_version": 2,
+	"name": "Breeze",
+	"version": "1.0.0",
+	"description": "Summarize your research interests and filter RSS feed articles by relevance",
+	"homepage_url": "https://github.com/example/zotero-breeze",
+	"icons": {
+		"48": "content/icons/icon.svg",
+		"96": "content/icons/icon.svg"
+	},
+	"applications": {
+		"zotero": {
+			"id": "breeze@zotero-plugin",
+			"update_url": "https://raw.githubusercontent.com/example/zotero-breeze/main/updates.json",
+			"strict_min_version": "6.999",
+			"strict_max_version": "8.*"
+		}
+	}
+}

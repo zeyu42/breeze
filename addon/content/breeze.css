@@ -1,0 +1,12 @@
+/* Breeze main window styles */
+
+.breeze-filter-btn {
+    /* Style the filter toggle button */
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.breeze-filter-btn[checked="true"] {
+    background-color: var(--accent-blue20, rgba(0, 120, 215, 0.2));
+    border-color: var(--accent-blue, rgb(0, 120, 215));
+}

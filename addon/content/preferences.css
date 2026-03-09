@@ -1,0 +1,15 @@
+/* Breeze preference pane styles */
+
+#breeze-interest-summary {
+	background-color: var(--color-background);
+	color: var(--color-foreground);
+	border: 1px solid var(--color-border);
+	border-radius: 4px;
+	padding: 8px;
+}
+
+#breeze-pref-api-key,
+#breeze-pref-api-url,
+#breeze-pref-model {
+	min-width: 300px;
+}
